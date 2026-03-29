@@ -10,26 +10,65 @@ const nav = [
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#f8fafc,white_45%)] text-slate-950">
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-slate-900 uppercase">
-            Automations
-          </Link>
-          <nav className="hidden items-center gap-2 md:flex">
+    <div className="min-h-screen bg-slate-50 text-slate-950">
+      <div className="mx-auto flex min-h-screen w-full max-w-7xl">
+        <aside className="hidden w-72 shrink-0 border-r border-slate-200 bg-white lg:flex lg:flex-col">
+          <div className="border-b border-slate-200 px-6 py-6">
+            <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-900">
+              Automations
+            </Link>
+            <p className="mt-3 text-sm leading-6 text-slate-500">
+              Agent systems, prompts, architectures, and implementation notes.
+            </p>
+          </div>
+
+          <nav className="flex-1 space-y-1 p-4">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+                className="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
+
+          <div className="border-t border-slate-200 p-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Status</p>
+              <p className="mt-2 text-sm text-slate-700">Public site scaffolded and ready for Vercel import.</p>
+            </div>
+          </div>
+        </aside>
+
+        <div className="flex min-h-screen flex-1 flex-col">
+          <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+            <div className="flex items-center justify-between px-6 py-4 lg:px-8">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">Demetri Sebastian Lopez</p>
+                <p className="mt-1 text-sm text-slate-600">Portfolio build in progress</p>
+              </div>
+              <div className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600">
+                Next.js + Vercel ready
+              </div>
+            </div>
+            <nav className="flex gap-2 overflow-x-auto px-6 pb-4 lg:hidden">
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </header>
+
+          <main className="flex-1">{children}</main>
         </div>
-      </header>
-      <main>{children}</main>
+      </div>
     </div>
   );
 }

@@ -3,18 +3,18 @@ import { Card, SectionHeader, SiteShell } from "@/components/site-shell";
 
 const featured = [
   {
-    title: "Prompt systems",
-    description: "Structured prompts for orchestration, review, planning, and guarded execution.",
+    title: "Prompts",
+    description: "Structured prompts for orchestrators, planners, reviewers, and guarded coding flows.",
     href: "/prompts",
   },
   {
     title: "Agentic architectures",
-    description: "Practical multi-agent patterns for routing, nested orchestration, and PR-only workflows.",
+    description: "Patterns for nested subagents, PR-only execution, and auditable handoffs.",
     href: "/architectures",
   },
   {
-    title: "Documentation",
-    description: "Notes, playbooks, and implementation details behind the systems I build.",
+    title: "Docs",
+    description: "Build notes, operating rules, deployment plans, and implementation decisions.",
     href: "/docs",
   },
 ];
@@ -22,44 +22,58 @@ const featured = [
 export default function Home() {
   return (
     <SiteShell>
-      <section className="mx-auto grid w-full max-w-7xl gap-16 px-6 py-20 lg:px-8 lg:py-28">
+      <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-10 lg:px-8 lg:py-12">
         <SectionHeader
-          eyebrow="Demetri Sebastian Lopez"
-          title="Automations for modern agentic systems"
-          description="A clean public hub for prompts, multi-agent architecture patterns, and implementation docs. Built in Next.js and designed to grow into a polished portfolio on Vercel."
+          eyebrow="Automations"
+          title="A clean home for prompts, agent systems, and build documentation"
+          description="This site is the public-facing home for the systems I’m building: prompt libraries, multi-agent orchestration patterns, and practical implementation docs designed for real workflows."
         />
 
-        <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-300/40">
-            <p className="text-sm font-medium text-slate-300">Current focus</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              Building production-minded AI workflows with clear safety rails and crisp UX.
-            </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_rgba(15,23,42,0.06)]">
+            <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-6">
+              <div>
+                <p className="text-sm font-medium text-slate-500">Overview</p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Production-minded AI workflows with clear guardrails.
+                </h2>
+              </div>
+              <div className="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-medium text-white">
+                Public build
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <p className="text-2xl font-semibold">PR-only</p>
-                <p className="mt-2 text-sm text-slate-300">Protected branch discipline and human approval at the final gate.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Protected branch discipline and human approval at final merge.
+                </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <p className="text-2xl font-semibold">Nested agents</p>
-                <p className="mt-2 text-sm text-slate-300">Orchestrators that can coordinate specialist workers without chaos.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Orchestrators coordinating specialist workers with clear task boundaries.
+                </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <p className="text-2xl font-semibold">Docs-first</p>
-                <p className="mt-2 text-sm text-slate-300">Prompts, patterns, and design decisions documented clearly.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  High-signal documentation around prompts, architecture, and deployment.
+                </p>
               </div>
             </div>
           </div>
 
           <Card
-            title="What this site will hold"
-            description="A simple, high-signal showcase of systems design thinking and implementation quality."
+            title="What’s inside"
+            description="A focused portfolio structure meant to grow cleanly over time."
           >
             <ul className="space-y-3 text-sm text-slate-600">
-              <li>• Prompt libraries and prompt engineering notes</li>
-              <li>• Agent orchestration architecture writeups</li>
-              <li>• Working docs and implementation playbooks</li>
-              <li>• Eventually: case studies, screenshots, and demos</li>
+              <li>• Prompt templates and orchestration patterns</li>
+              <li>• Agent architecture writeups and safety rules</li>
+              <li>• Build notes and deployment documentation</li>
+              <li>• Room for future case studies and live demos</li>
             </ul>
           </Card>
         </div>

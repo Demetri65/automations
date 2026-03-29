@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://automations.demetri-sebastian-lopez.com"),
   title: "Automations",
   description: "Agentic systems, prompts, architectures, and implementation docs by Demetri Sebastian Lopez.",
 };
