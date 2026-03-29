@@ -6,6 +6,9 @@ const docsModules = {
   "foundation/site-structure": () => import("@/content/docs/foundation/site-structure.mdx"),
   "prompts/prompt-library-strategy": () => import("@/content/docs/prompts/prompt-library-strategy.mdx"),
   "architecture/pr-only-systems": () => import("@/content/docs/architecture/pr-only-systems.mdx"),
+  "security/threat-model": () => import("@/content/docs/security/threat-model.mdx"),
+  "deployment/vps-openclaw-stack": () => import("@/content/docs/deployment/vps-openclaw-stack.mdx"),
+  "architecture/autonomy-and-approval-gates": () => import("@/content/docs/architecture/autonomy-and-approval-gates.mdx"),
 } as const;
 
 export async function getDocComponent(slug: string[]) {

@@ -6,7 +6,7 @@
 ## Immediate next actions
 1. Decide whether the alias routes (`/agent-hub`, `/workspace`, `/control-center`, `/command-center`) should remain full pages or redirect to `/operations`.
 2. Push `feat/portfolio-foundation` when ready.
-3. Prepare a concise PR summary covering prompts, docs, architecture viewer foundation, and design polish.
+3. Prepare a concise PR summary covering prompts, docs, architecture viewer foundation, design polish, and the new security/deployment/supervision additions.
 
 ## Known blockers
 - None currently.

@@ -46,6 +46,45 @@ export const docsEntries: DocsEntry[] = [
       { id: "when-it-works-best", label: "When it works best" },
     ],
   },
+  {
+    slug: ["security", "threat-model"],
+    title: "Threat Model",
+    description: "The security assumptions, blast-radius boundaries, and failure cases that shape the system.",
+    section: "Security",
+    file: "threat-model.mdx",
+    toc: [
+      { id: "core-assumption", label: "Core assumption" },
+      { id: "primary-risks", label: "Primary risks" },
+      { id: "defensive-posture", label: "Defensive posture" },
+      { id: "public-facing-guidance", label: "Public-facing guidance" },
+    ],
+  },
+  {
+    slug: ["deployment", "vps-openclaw-stack"],
+    title: "VPS OpenClaw Stack",
+    description: "How a self-hosted VPS stack supports reliability, privacy, and controlled automation workflows.",
+    section: "Deployment",
+    file: "vps-openclaw-stack.mdx",
+    toc: [
+      { id: "why-vps-hosting-matters", label: "Why VPS hosting matters" },
+      { id: "stack-shape", label: "Stack shape" },
+      { id: "operating-principles", label: "Operating principles" },
+      { id: "what-this-signals", label: "What this signals" },
+    ],
+  },
+  {
+    slug: ["architecture", "autonomy-and-approval-gates"],
+    title: "Autonomy and Approval Gates",
+    description: "How to design automation that remains useful without becoming unsupervised theater.",
+    section: "Architecture",
+    file: "autonomy-and-approval-gates.mdx",
+    toc: [
+      { id: "design-goal", label: "Design goal" },
+      { id: "where-automation-should-run", label: "Where automation should run" },
+      { id: "where-human-approval-stays", label: "Where human approval stays" },
+      { id: "why-this-matters-publicly", label: "Why this matters publicly" },
+    ],
+  },
 ];
 
 export function getDocBySlug(slug: string[]) {

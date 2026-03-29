@@ -80,3 +80,10 @@ Tighten the site into a more credible flagship portfolio surface with stronger p
 
 ### What remains
 - Stage 8: push branch, prepare PR summary, and decide whether alias routes should stay or redirect.
+
+### Additional improvements added after polish
+- Added security docs for threat modeling and defensive posture.
+- Added deployment docs for a self-hosted VPS + OpenClaw stack.
+- Added docs on autonomy and approval gates for supervised automation design.
+- Added new architecture entries for a self-hosted agent stack and supervised autonomy gates.
+- Kept the content integrated into the existing docs and architecture systems rather than creating one-off pages.

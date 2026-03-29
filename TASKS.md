@@ -53,5 +53,12 @@
 
 ## Stage 8 — branch push, PR creation, final summary
 - [ ] Push feature branch
-- [ ] Summarize work
+- [x] Summarize work
 - [ ] Prepare PR notes
+
+## Additional content expansion
+- [x] Add security docs
+- [x] Add deployment docs
+- [x] Add autonomy/approval-gate docs
+- [x] Add self-hosted stack architecture
+- [x] Add supervised autonomy architecture

@@ -34,3 +34,7 @@
 ### Decision: Add a generated root OG image now, defer route-specific OG images
 - A single strong OG image gives the site a credible share surface immediately.
 - Per-route OG assets can be added later once content breadth grows.
+
+### Decision: Surface security and supervision as first-class portfolio themes
+- The site should not only showcase what automation can do, but also where it should be constrained.
+- Security posture, deployment shape, and approval boundaries are now part of the portfolio story, not hidden implementation details.

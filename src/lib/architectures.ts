@@ -77,9 +77,7 @@ export const architectures: ArchitectureDefinition[] = [
       "Overlapping agent responsibilities create noisy handoffs and weaker accountability.",
     ],
     promptsInvolved: ["frontend-engineering-flagship"],
-    relatedDocs: [
-      { title: "Architecture principles", href: "/docs/architecture/pr-only-systems" },
-    ],
+    relatedDocs: [{ title: "Architecture principles", href: "/docs/architecture/pr-only-systems" }],
     nodes: [
       { id: "request", type: "trigger", label: "User request", description: "A coding task arrives." },
       { id: "orchestrator", type: "agent", label: "Orchestrator", description: "Routes work and enforces policy." },
@@ -92,6 +90,74 @@ export const architectures: ArchitectureDefinition[] = [
       { id: "a2", source: "orchestrator", target: "workers" },
       { id: "a3", source: "workers", target: "approval" },
       { id: "a4", source: "approval", target: "result" },
+    ],
+  },
+  {
+    slug: "self-hosted-agent-stack",
+    title: "Self-hosted Agent Stack",
+    summary:
+      "A VPS-hosted automation stack that treats reliability, privacy, and control as product features instead of afterthoughts.",
+    useCase:
+      "Use when you want always-on agent infrastructure with clear control over hosting, routing, and operational boundaries.",
+    tradeoffs: [
+      "Self-hosting adds operational overhead compared to a purely managed SaaS stack.",
+      "More control also means more responsibility for hardening, observability, and uptime.",
+    ],
+    failureModes: [
+      "Weak reverse-proxy or auth setup can expose sensitive tooling.",
+      "Lack of circuit breakers can let retries or loops burn resources overnight.",
+    ],
+    promptsInvolved: ["frontend-engineering-flagship"],
+    relatedDocs: [
+      { title: "VPS OpenClaw Stack", href: "/docs/deployment/vps-openclaw-stack" },
+      { title: "Threat Model", href: "/docs/security/threat-model" },
+    ],
+    nodes: [
+      { id: "vps", type: "trigger", label: "VPS host", description: "Always-on infrastructure base." },
+      { id: "gateway", type: "agent", label: "OpenClaw gateway", description: "Routes messages, sessions, and tool execution." },
+      { id: "agents", type: "agent", label: "Agent layer", description: "Main agents and subagents with isolated workspaces." },
+      { id: "memory", type: "memory", label: "State + memory", description: "Sessions, files, and structured content registries." },
+      { id: "ui", type: "output", label: "Public / operator surfaces", description: "Docs, dashboards, and communication surfaces." },
+    ],
+    edges: [
+      { id: "s1", source: "vps", target: "gateway" },
+      { id: "s2", source: "gateway", target: "agents" },
+      { id: "s3", source: "agents", target: "memory" },
+      { id: "s4", source: "gateway", target: "ui" },
+    ],
+  },
+  {
+    slug: "supervised-autonomy-gates",
+    title: "Supervised Autonomy Gates",
+    summary:
+      "A system pattern for letting automation move quickly while preserving explicit human control at the highest-risk edges.",
+    useCase:
+      "Use when you want the benefits of proactive agents without pretending that unsupervised action is automatically safe or desirable.",
+    tradeoffs: [
+      "Approval gates slow down certain actions but preserve trust and auditability.",
+      "A well-designed gate system requires thoughtful separation of low-risk and high-risk actions.",
+    ],
+    failureModes: [
+      "If approval boundaries are vague, agents will drift into unsafe or confusing behavior.",
+      "If every action requires approval, the system stops feeling usefully autonomous.",
+    ],
+    promptsInvolved: ["frontend-engineering-flagship"],
+    relatedDocs: [
+      { title: "Autonomy and Approval Gates", href: "/docs/architecture/autonomy-and-approval-gates" },
+      { title: "Threat Model", href: "/docs/security/threat-model" },
+    ],
+    nodes: [
+      { id: "task", type: "trigger", label: "Incoming task", description: "A user request or scheduled job starts the flow." },
+      { id: "analysis", type: "agent", label: "Automation layer", description: "Analyzes, drafts, and prepares work." },
+      { id: "gate", type: "approval", label: "Approval gate", description: "High-risk actions require explicit human confirmation." },
+      { id: "memory2", type: "memory", label: "Audit trail", description: "Decisions, outputs, and context remain reviewable." },
+      { id: "outcome", type: "output", label: "Approved outcome", description: "A supervised result reaches the outside world." },
+    ],
+    edges: [
+      { id: "g1", source: "task", target: "analysis" },
+      { id: "g2", source: "analysis", target: "gate" },
+      { id: "g3", source: "gate", target: "memory2" },
+      { id: "g4", source: "memory2", target: "outcome" },
     ],
   },
 ];

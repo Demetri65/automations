@@ -34,6 +34,7 @@ export default async function DocsPage(props: PageProps<"/docs/[[...slug]]">) {
         <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-12">
           <SectionHeader
             eyebrow="Documentation"
+            badge="MDX-driven knowledge base"
             title="A streamlined docs system for the thinking behind the work"
             description="These docs are meant to read like product-grade engineering notes: concise, navigable, and polished enough to stand on their own in public."
           />

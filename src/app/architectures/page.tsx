@@ -21,6 +21,11 @@ export default function ArchitecturesPage() {
           description="The goal here is to make agentic architectures browsable and extensible. Each entry pairs visual structure with written context so the diagrams stay useful to humans, not just impressive at a glance."
         />
 
+        <Card
+          title="What this section is for"
+          description="This explorer is not trying to dump every possible diagram into the site. It exists to make a few strong systems legible: supervision, deployment shape, prompt-driven flows, and engineering tradeoffs."
+        />
+
         <div className="grid gap-6 lg:grid-cols-2">
           {architectures.map((architecture) => (
             <Link key={architecture.slug} href={`/architectures/${architecture.slug}`}>

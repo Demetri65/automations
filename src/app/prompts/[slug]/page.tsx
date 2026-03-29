@@ -29,7 +29,7 @@ export default async function PromptDetailPage(props: PageProps<"/prompts/[slug]
   return (
     <SiteShell>
       <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-12">
-        <SectionHeader eyebrow="Prompt detail" title={prompt.title} description={prompt.summary} />
+        <SectionHeader eyebrow="Prompt detail" badge={`v${prompt.version}`} title={prompt.title} description={prompt.summary} />
 
         <div className="flex flex-wrap gap-2">
           <Badge>{prompt.status}</Badge>

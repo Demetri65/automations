@@ -1,0 +1,36 @@
+export const metadata = {
+  title: 'Threat Model',
+  description: 'The security assumptions, blast-radius boundaries, and failure cases that shape the system.',
+}
+
+# Threat Model
+
+Automation gets more credible when it is explicit about what can go wrong.
+
+## Core assumption
+
+This system treats repo content, prompts, comments, web pages, and external inputs as potentially hostile by default. The goal is not to become paranoid theater — it is to reduce avoidable mistakes and keep risk visible.
+
+## Primary risks
+
+- prompt injection through untrusted content
+- accidental exposure of secrets or environment details
+- over-permissioned tools or runtimes
+- unreviewed writes to protected branches or public systems
+- retry loops, runaway tasks, or hidden cost burn
+
+## Defensive posture
+
+- least privilege by default
+- server-first boundaries where possible
+- explicit write gates for higher-risk actions
+- PR-only workflows for meaningful code changes
+- auditability through structured outputs and docs
+
+<Callout>
+A trustworthy system is not the one that claims to be fully autonomous. It is the one that makes its boundaries legible.
+</Callout>
+
+## Public-facing guidance
+
+For a public portfolio, security thinking should be visible. Employers and technical reviewers should be able to see that the system was designed with blast radius, approval gates, and failure handling in mind.
