@@ -11,46 +11,46 @@ const nav = [
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl">
-        <aside className="hidden w-72 shrink-0 border-r border-slate-200 bg-white lg:flex lg:flex-col">
-          <div className="border-b border-slate-200 px-6 py-6">
-            <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-900">
+        <aside className="hidden w-64 shrink-0 border-r bg-background lg:flex lg:flex-col">
+          <div className="border-b px-6 py-6">
+            <Link href="/" className="text-sm font-semibold tracking-tight text-foreground">
               Automations
             </Link>
-            <p className="mt-3 text-sm leading-6 text-slate-500">
-              Agent systems, prompts, architectures, and implementation notes.
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Agent systems, prompts, architectures, and docs.
             </p>
           </div>
 
-          <nav className="flex-1 space-y-1 p-4">
+          <nav className="flex-1 space-y-1 p-3">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+                className="flex items-center rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="border-t border-slate-200 p-4">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Status</p>
-              <p className="mt-2 text-sm text-slate-700">Public site scaffolded and ready for Vercel import.</p>
+          <div className="border-t p-4">
+            <div className="rounded-xl border bg-card p-4">
+              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Status</p>
+              <p className="mt-2 text-sm text-foreground">Ready for Vercel import.</p>
             </div>
           </div>
         </aside>
 
         <div className="flex min-h-screen flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+          <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="flex items-center justify-between px-6 py-4 lg:px-8">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">Demetri Sebastian Lopez</p>
-                <p className="mt-1 text-sm text-slate-600">Portfolio build in progress</p>
+                <p className="text-sm font-medium text-foreground">Demetri Sebastian Lopez</p>
+                <p className="mt-1 text-sm text-muted-foreground">Portfolio build in progress</p>
               </div>
-              <div className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600">
+              <div className="rounded-md border bg-card px-3 py-1.5 text-sm text-muted-foreground">
                 Next.js + Vercel ready
               </div>
             </div>
@@ -59,7 +59,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600"
+                  className="rounded-md border bg-card px-3 py-2 text-sm text-muted-foreground"
                 >
                   {item.label}
                 </Link>
@@ -84,10 +84,10 @@ export function SectionHeader({
   description: string;
 }) {
   return (
-    <div className="max-w-3xl space-y-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{eyebrow}</p>
-      <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
-      <p className="text-lg leading-8 text-slate-600">{description}</p>
+    <div className="max-w-3xl space-y-3">
+      <p className="text-sm font-medium text-muted-foreground">{eyebrow}</p>
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{title}</h1>
+      <p className="text-base leading-7 text-muted-foreground">{description}</p>
     </div>
   );
 }
@@ -102,10 +102,10 @@ export function Card({
   children?: ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_rgba(15,23,42,0.06)]">
+    <div className="rounded-xl border bg-card p-6">
       <div className="space-y-2">
-        <h2 className="text-lg font-semibold text-slate-950">{title}</h2>
-        <p className="text-sm leading-7 text-slate-600">{description}</p>
+        <h2 className="text-base font-semibold text-card-foreground">{title}</h2>
+        <p className="text-sm leading-6 text-muted-foreground">{description}</p>
       </div>
       {children ? <div className="mt-5">{children}</div> : null}
     </div>

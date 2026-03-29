@@ -25,40 +25,33 @@ const events = [
 export default function OperationsPage() {
   return (
     <SiteShell>
-      <section className="mx-auto w-full max-w-7xl space-y-10 px-6 py-10 lg:px-8 lg:py-12">
+      <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-12">
         <SectionHeader
           eyebrow="Operations"
           title="A working view into tasks, agents, and scheduled automation"
-          description="This section adapts the best parts of a mission dashboard into Automations without making it feel like a separate product."
+          description="A minimal operations surface for automation workflows, inspired by dashboard tooling but aligned with the rest of the site."
         />
 
         <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
-          <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-300/30">
-            <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-6">
-              <div>
-                <p className="text-sm font-medium text-slate-300">Overview</p>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight">Automations workspace</h2>
+          <Card title="Overview" description="A simple snapshot of current workflow status.">
+            <div className="grid gap-3 md:grid-cols-3">
+              <div className="rounded-lg border bg-muted p-4">
+                <p className="text-2xl font-semibold text-foreground">15</p>
+                <p className="mt-1 text-sm text-muted-foreground">Tracked tasks</p>
               </div>
-              <div className="rounded-2xl bg-white/10 px-4 py-3 text-sm font-medium text-white">Live-inspired UI</div>
-            </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold">15</p>
-                <p className="mt-2 text-sm text-slate-300">Tracked tasks</p>
+              <div className="rounded-lg border bg-muted p-4">
+                <p className="text-2xl font-semibold text-foreground">4</p>
+                <p className="mt-1 text-sm text-muted-foreground">Visible agents</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold">4</p>
-                <p className="mt-2 text-sm text-slate-300">Visible agents</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-semibold">99.9%</p>
-                <p className="mt-2 text-sm text-slate-300">Deployment target</p>
+              <div className="rounded-lg border bg-muted p-4">
+                <p className="text-2xl font-semibold text-foreground">99.9%</p>
+                <p className="mt-1 text-sm text-muted-foreground">Deployment target</p>
               </div>
             </div>
-          </div>
+          </Card>
 
-          <Card title="Views" description="Use whichever name feels right for the same core surface.">
-            <div className="flex flex-wrap gap-2 text-sm text-slate-600">
+          <Card title="Views" description="Different labels for the same core surface.">
+            <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
               {[
                 ["Operations", "/operations"],
                 ["Agent Hub", "/agent-hub"],
@@ -66,7 +59,7 @@ export default function OperationsPage() {
                 ["Control Center", "/control-center"],
                 ["Command Center", "/command-center"],
               ].map(([label, href]) => (
-                <Link key={href} href={href} className="rounded-full border border-slate-200 px-3 py-2 hover:bg-slate-50">
+                <Link key={href} href={href} className="rounded-md border bg-card px-3 py-2 hover:bg-muted hover:text-foreground">
                   {label}
                 </Link>
               ))}
@@ -75,17 +68,17 @@ export default function OperationsPage() {
         </div>
 
         <div className="grid gap-6 xl:grid-cols-[1.4fr_1fr]">
-          <Card title="Task board" description="A crisp kanban-style overview for active work.">
+          <Card title="Task board" description="A lightweight kanban view for active work.">
             <div className="grid gap-4 lg:grid-cols-4">
               {taskColumns.map((column) => (
-                <div key={column.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div key={column.name} className="rounded-lg border bg-muted p-4">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-slate-900">{column.name}</p>
-                    <span className="rounded-full bg-white px-2 py-1 text-xs text-slate-500">{column.count}</span>
+                    <p className="text-sm font-medium text-foreground">{column.name}</p>
+                    <span className="rounded-md border bg-background px-2 py-1 text-xs text-muted-foreground">{column.count}</span>
                   </div>
                   <div className="mt-3 space-y-2">
                     {column.items.map((item) => (
-                      <div key={item} className="rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-600">
+                      <div key={item} className="rounded-md border bg-background p-3 text-sm text-muted-foreground">
                         {item}
                       </div>
                     ))}
@@ -99,21 +92,21 @@ export default function OperationsPage() {
             <Card title="Agent activity" description="A compact view of active roles and readiness.">
               <div className="space-y-3">
                 {agents.map((agent) => (
-                  <div key={agent.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div key={agent.name} className="rounded-lg border bg-muted p-4">
                     <div className="flex items-center justify-between">
-                      <p className="font-medium text-slate-900">{agent.name}</p>
-                      <span className="text-xs text-emerald-600">{agent.status}</span>
+                      <p className="font-medium text-foreground">{agent.name}</p>
+                      <span className="text-xs text-muted-foreground">{agent.status}</span>
                     </div>
-                    <p className="mt-1 text-sm text-slate-600">{agent.role}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{agent.role}</p>
                   </div>
                 ))}
               </div>
             </Card>
 
-            <Card title="Calendar / cron" description="Scheduled work, recurring automation, and operational cadence.">
-              <ul className="space-y-3 text-sm text-slate-600">
+            <Card title="Calendar / cron" description="Scheduled work and recurring automation cadence.">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 {events.map((event) => (
-                  <li key={event} className="rounded-xl border border-slate-200 bg-slate-50 p-3">{event}</li>
+                  <li key={event} className="rounded-md border bg-muted p-3">{event}</li>
                 ))}
               </ul>
             </Card>
