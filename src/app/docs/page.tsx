@@ -15,6 +15,19 @@ export default function DocsPage() {
           <Card title="Deployment" description="Planned Vercel deployment path, domain wiring, and environment notes." />
           <Card title="Standards" description="Conventions for components, content organization, and safe automation workflows." />
         </div>
+
+        <Card
+          title="Operations surfaces"
+          description="Dashboard-style views inspired by agent workflow tooling now live under multiple names so the best fit can emerge naturally."
+        >
+          <ul className="space-y-2 text-sm text-slate-600">
+            <li>• /operations</li>
+            <li>• /agent-hub</li>
+            <li>• /workspace</li>
+            <li>• /control-center</li>
+            <li>• /command-center</li>
+          </ul>
+        </Card>
       </section>
     </SiteShell>
   );

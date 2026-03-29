@@ -22,6 +22,11 @@ npm run start
 
 ## Pages
 - `/`
+- `/operations`
+- `/agent-hub`
+- `/workspace`
+- `/control-center`
+- `/command-center`
 - `/prompts`
 - `/architectures`
 - `/docs`

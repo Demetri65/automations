@@ -3,6 +3,11 @@ import { Card, SectionHeader, SiteShell } from "@/components/site-shell";
 
 const featured = [
   {
+    title: "Operations",
+    description: "Task boards, agent activity, calendar views, and dashboard-inspired workflow tooling.",
+    href: "/operations",
+  },
+  {
     title: "Prompts",
     description: "Structured prompts for orchestrators, planners, reviewers, and guarded coding flows.",
     href: "/prompts",
@@ -11,11 +16,6 @@ const featured = [
     title: "Agentic architectures",
     description: "Patterns for nested subagents, PR-only execution, and auditable handoffs.",
     href: "/architectures",
-  },
-  {
-    title: "Docs",
-    description: "Build notes, operating rules, deployment plans, and implementation decisions.",
-    href: "/docs",
   },
 ];
 
