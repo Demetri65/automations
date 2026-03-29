@@ -1,0 +1,35 @@
+export const metadata = {
+  title: 'Site Structure',
+  description: 'How the Automations portfolio is organized for clarity, scale, and reviewability.',
+}
+
+# Site Structure
+
+This portfolio is organized like a product, not a landing page.
+
+## Principles
+
+- Thin App Router files.
+- Local, typed content registries.
+- Feature-specific UI grouped by concern.
+- Shared primitives in `components/ui`.
+- Server-first rendering by default.
+
+## Route strategy
+
+The public routes stay clean and readable:
+
+- `/prompts`
+- `/architectures`
+- `/docs`
+- `/operations`
+
+Each route should mainly compose feature modules and metadata instead of carrying the whole implementation.
+
+## Content strategy
+
+Prompts and architectures are modeled as structured TypeScript registries. Docs are written in MDX for a better reading experience and easier long-form maintenance.
+
+<Callout>
+The goal is to keep content expressive while making the codebase pleasant to extend.
+</Callout>
