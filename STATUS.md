@@ -56,3 +56,27 @@ Move the site from static placeholder pages to structured content systems for pr
 - Stage 6: metadata polish, icons, OG asset foundation, and more cohesive design refinement.
 - Stage 7: lint, accessibility/responsiveness review, cleanup, and reduction of duplicated route surfaces where appropriate.
 - Stage 8: final branch push summary and PR preparation.
+
+## Stage 6–7 — polish, metadata, and QA pass
+
+### Stage goal
+Tighten the site into a more credible flagship portfolio surface with stronger page hierarchy, cleaner shared design patterns, richer metadata, and a final accessibility/responsiveness sweep.
+
+### What changed
+- Refined the shared shell with stronger hierarchy, cleaner branding, and more intentional spacing.
+- Upgraded the homepage to better communicate productized engineering value and system intent.
+- Polished `/prompts`, `/architectures`, `/operations`, and docs navigation to feel more cohesive.
+- Added route-level metadata for key pages and a generated root Open Graph image.
+- Kept the site visually restrained and more aligned with a minimal shadcn-style product surface.
+
+### What passed
+- `npm run build` passes.
+- `npm run lint` passes.
+- Dynamic prompt, docs, and architecture routes still generate correctly.
+
+### What failed
+- No automated test suite yet beyond lint/build.
+- Alias routes still duplicate the operations surface rather than redirecting.
+
+### What remains
+- Stage 8: push branch, prepare PR summary, and decide whether alias routes should stay or redirect.

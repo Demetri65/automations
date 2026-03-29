@@ -31,8 +31,10 @@ export function DocsShell({
                       key={entry.slug.join("/")}
                       href={`/docs/${entry.slug.join("/")}`}
                       className={cn(
-                        "block rounded-md px-3 py-2 text-sm transition",
-                        active ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900",
+                        "block rounded-lg px-3 py-2 text-sm transition",
+                        active
+                          ? "bg-slate-100 text-slate-900"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900",
                       )}
                     >
                       {entry.title}
@@ -62,7 +64,7 @@ export function DocsShell({
 
       <aside className="hidden xl:block">
         {toc?.length ? (
-          <div className="sticky top-24 rounded-xl border bg-white p-4">
+          <div className="sticky top-24 rounded-2xl border bg-card p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
             <p className="text-sm font-medium text-slate-900">On this page</p>
             <div className="mt-3 space-y-2">
               {toc.map((item) => (

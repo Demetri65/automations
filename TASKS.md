@@ -39,16 +39,16 @@
 - [x] Add custom node types
 
 ## Stage 6 — design polish, metadata, icons, OG assets
-- [ ] Unify metadata strategy
-- [ ] Add polished route metadata
-- [ ] Add OG image foundation
-- [ ] Refine visual cohesion
+- [x] Unify metadata strategy
+- [x] Add polished route metadata
+- [x] Add OG image foundation
+- [x] Refine visual cohesion
 
 ## Stage 7 — QA, accessibility, responsiveness, cleanup
-- [ ] Lint
-- [ ] Typecheck/build
-- [ ] Accessibility review
-- [ ] Responsive review
+- [x] Lint
+- [x] Typecheck/build
+- [x] Accessibility review
+- [x] Responsive review
 - [ ] Cleanup / reduce route duplication
 
 ## Stage 8 — branch push, PR creation, final summary

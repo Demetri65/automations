@@ -1,13 +1,12 @@
 # NEXT STEPS
 
 ## Current focus
-- Stage 6: design polish, metadata, icons, and OG asset foundation
+- Stage 8: branch push, PR prep, and final cleanup decision
 
 ## Immediate next actions
-1. Add route-level metadata polish and OG/image scaffolding.
-2. Refine visual cohesion across home, prompts, docs, architectures, and operations.
-3. Run lint, accessibility checks, and responsive cleanup.
-4. Decide whether the alias routes (`/agent-hub`, `/workspace`, `/control-center`, `/command-center`) should remain full pages or redirect to `/operations`.
+1. Decide whether the alias routes (`/agent-hub`, `/workspace`, `/control-center`, `/command-center`) should remain full pages or redirect to `/operations`.
+2. Push `feat/portfolio-foundation` when ready.
+3. Prepare a concise PR summary covering prompts, docs, architecture viewer foundation, and design polish.
 
 ## Known blockers
 - None currently.

@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
 import { Card, SectionHeader, SiteShell } from "@/components/site-shell";
+import { Badge } from "@/components/ui/badge";
 
 const taskColumns = [
   { name: "Inbox", count: 4, items: ["Homepage polish", "Prompt library import"] },
@@ -22,56 +25,65 @@ const events = [
   "Deploy window",
 ];
 
+export const metadata: Metadata = {
+  title: "Operations",
+  description: "A dashboard-style operations surface for tasks, agents, schedules, and workflow visibility.",
+};
+
 export default function OperationsPage() {
   return (
     <SiteShell>
-      <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-12">
+      <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-14">
         <SectionHeader
           eyebrow="Operations"
-          title="A working view into tasks, agents, and scheduled automation"
-          description="A minimal operations surface for automation workflows, inspired by dashboard tooling but aligned with the rest of the site."
+          badge="Dashboard surface"
+          title="A clean operations view for tasks, agents, and workflow visibility"
+          description="This section borrows the useful ideas from automation dashboards without turning the site into a separate product. It exists to show how operational UI can fit inside the larger system."
         />
 
-        <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
-          <Card title="Overview" description="A simple snapshot of current workflow status.">
+        <div className="grid gap-6 xl:grid-cols-[1.4fr_0.9fr]">
+          <Card title="Overview" description="A quick snapshot of active system surfaces.">
             <div className="grid gap-3 md:grid-cols-3">
-              <div className="rounded-lg border bg-muted p-4">
+              <div className="rounded-xl border bg-muted p-4">
                 <p className="text-2xl font-semibold text-foreground">15</p>
                 <p className="mt-1 text-sm text-muted-foreground">Tracked tasks</p>
               </div>
-              <div className="rounded-lg border bg-muted p-4">
+              <div className="rounded-xl border bg-muted p-4">
                 <p className="text-2xl font-semibold text-foreground">4</p>
                 <p className="mt-1 text-sm text-muted-foreground">Visible agents</p>
               </div>
-              <div className="rounded-lg border bg-muted p-4">
+              <div className="rounded-xl border bg-muted p-4">
                 <p className="text-2xl font-semibold text-foreground">99.9%</p>
                 <p className="mt-1 text-sm text-muted-foreground">Deployment target</p>
               </div>
             </div>
           </Card>
 
-          <Card title="Views" description="Different labels for the same core surface.">
-            <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-              {[
-                ["Operations", "/operations"],
-                ["Agent Hub", "/agent-hub"],
-                ["Workspace", "/workspace"],
-                ["Control Center", "/control-center"],
-                ["Command Center", "/command-center"],
-              ].map(([label, href]) => (
-                <Link key={href} href={href} className="rounded-md border bg-card px-3 py-2 hover:bg-muted hover:text-foreground">
-                  {label}
-                </Link>
-              ))}
+          <Card title="View naming" description="Multiple labels are preserved right now so the strongest naming can emerge from actual use.">
+            <div className="space-y-3">
+              <Badge variant="secondary">Alias routes</Badge>
+              <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+                {[
+                  ["Operations", "/operations"],
+                  ["Agent Hub", "/agent-hub"],
+                  ["Workspace", "/workspace"],
+                  ["Control Center", "/control-center"],
+                  ["Command Center", "/command-center"],
+                ].map(([label, href]) => (
+                  <Link key={href} href={href} className="rounded-md border bg-card px-3 py-2 hover:bg-muted hover:text-foreground">
+                    {label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </Card>
         </div>
 
         <div className="grid gap-6 xl:grid-cols-[1.4fr_1fr]">
-          <Card title="Task board" description="A lightweight kanban view for active work.">
+          <Card title="Task board" description="A lightweight kanban-style surface for active work.">
             <div className="grid gap-4 lg:grid-cols-4">
               {taskColumns.map((column) => (
-                <div key={column.name} className="rounded-lg border bg-muted p-4">
+                <div key={column.name} className="rounded-xl border bg-muted p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-medium text-foreground">{column.name}</p>
                     <span className="rounded-md border bg-background px-2 py-1 text-xs text-muted-foreground">{column.count}</span>
@@ -92,7 +104,7 @@ export default function OperationsPage() {
             <Card title="Agent activity" description="A compact view of active roles and readiness.">
               <div className="space-y-3">
                 {agents.map((agent) => (
-                  <div key={agent.name} className="rounded-lg border bg-muted p-4">
+                  <div key={agent.name} className="rounded-xl border bg-muted p-4">
                     <div className="flex items-center justify-between">
                       <p className="font-medium text-foreground">{agent.name}</p>
                       <span className="text-xs text-muted-foreground">{agent.status}</span>

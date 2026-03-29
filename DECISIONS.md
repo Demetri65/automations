@@ -26,3 +26,11 @@
 ### Decision: Use MDX for docs only
 - Docs are the long-form content surface, so MDX is appropriate there.
 - Prompts and architectures stay in typed data structures because they benefit more from metadata-heavy rendering than free-form prose.
+
+### Decision: Keep the visual language restrained
+- The site should feel like a productized engineering system, not a flashy template.
+- Favor strong spacing, quiet surfaces, and clear hierarchy over decorative effects.
+
+### Decision: Add a generated root OG image now, defer route-specific OG images
+- A single strong OG image gives the site a credible share surface immediately.
+- Per-route OG assets can be added later once content breadth grows.

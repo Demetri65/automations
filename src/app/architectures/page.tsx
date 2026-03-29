@@ -13,11 +13,12 @@ export const metadata: Metadata = {
 export default function ArchitecturesPage() {
   return (
     <SiteShell>
-      <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-12">
+      <section className="mx-auto w-full max-w-7xl space-y-8 px-6 py-10 lg:px-8 lg:py-14">
         <SectionHeader
           eyebrow="Architecture explorer"
-          title="Foundations for viewing agentic systems like engineered products"
-          description="This section turns architecture thinking into a browsable system: clear summaries, explicit tradeoffs, and visual flows that can grow over time without turning into a diagram graveyard."
+          badge="React Flow + ELK foundation"
+          title="Architecture views built to explain systems, tradeoffs, and flow — not just decorate them"
+          description="The goal here is to make agentic architectures browsable and extensible. Each entry pairs visual structure with written context so the diagrams stay useful to humans, not just impressive at a glance."
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -25,7 +26,10 @@ export default function ArchitecturesPage() {
             <Link key={architecture.slug} href={`/architectures/${architecture.slug}`}>
               <Card title={architecture.title} description={architecture.summary}>
                 <div className="space-y-3">
-                  <Badge variant="secondary">{architecture.nodes.length} nodes</Badge>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">{architecture.nodes.length} nodes</Badge>
+                    <Badge variant="outline">{architecture.edges.length} edges</Badge>
+                  </div>
                   <p className="text-sm text-slate-600">{architecture.useCase}</p>
                 </div>
               </Card>
